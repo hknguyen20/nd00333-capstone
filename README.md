@@ -1,3 +1,4 @@
+https://github.com/microsoft/MLHyperparameterTuning/blob/master/04_Hyperparameter_Random_Search.ipynb 
 *NOTE:* This file is a template that you can use to create the README for your project. The *TODO* comments below will highlight the information you should be sure to include.
 
 # Your Project Title Here

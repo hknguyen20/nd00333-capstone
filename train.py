@@ -18,7 +18,7 @@ def clean_data(data):
     string_col=df.select_dtypes("string").columns.to_list()
     df = pd.get_dummies(df, columns=string_col, drop_first=False)
     y = df["HeartDisease"]
-    x = df.drop("HeartDisease", in_place=True,axis=1)
+    x = df.drop("HeartDisease", inplace=True,axis=1)
     return x, y
 
 def main():

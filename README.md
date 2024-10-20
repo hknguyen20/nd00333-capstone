@@ -41,6 +41,3 @@ I uploaded the dataset to github and access the dataset using URL. I access usin
 - A working model
 - Demo of the deployed  model
 - Demo of a sample request sent to the endpoint and its response
-
-## Standout Suggestions
-*TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.

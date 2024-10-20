@@ -1,23 +1,18 @@
-https://github.com/microsoft/MLHyperparameterTuning/blob/master/04_Hyperparameter_Random_Search.ipynb 
-*NOTE:* This file is a template that you can use to create the README for your project. The *TODO* comments below will highlight the information you should be sure to include.
 
-# Your Project Title Here
+# Capstone Project - Azure ML Engineer
 
 *TODO:* Write a short introduction to your project.
-
-## Project Set Up and Installation
-*OPTIONAL:* If your project has any special installation steps, this is where you should put it. To turn this project into a professional portfolio project, you are encouraged to explain how to set up this project in AzureML.
 
 ## Dataset
 
 ### Overview
-*TODO*: Explain about the data you are using and where you got it from.
+This is the Heart Failure Prediction Dataset taken from Kaggle [link here](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction). It consists of 11 features and 1 target (HeartDisease: 1,0)
 
 ### Task
-*TODO*: Explain the task you are going to be solving with this dataset and the features you will be using for it.
+The task is Classification, with the HeartDisease target: 1 is patient having heart disease and 0 is not having. As there are relatively few features, I will use all 11 of them.
 
 ### Access
-*TODO*: Explain how you are accessing the data in your workspace.
+I uploaded the dataset to github and access the dataset using URL. I access using Dataset.Tabular and register dataset to workspace.
 
 ## Automated ML
 *TODO*: Give an overview of the `automl` settings and configuration you used for this experiment

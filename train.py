@@ -17,9 +17,10 @@ def clean_data(data):
     df[string_col]=df[string_col].astype("string")
     string_col=df.select_dtypes("string").columns.to_list()
     df = pd.get_dummies(df, columns=string_col, drop_first=False)
-    y = df["HeartDisease"]
-    x = df.drop("HeartDisease", inplace=True,axis=1)
-    return x, y
+    # y = df["HeartDisease"]
+    # x = df.drop("HeartDisease", inplace=True,axis=1)
+    y = df.pop('HeartDisease')
+    return df, y
 
 def main():
     # Add arguments to script

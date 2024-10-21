@@ -47,13 +47,21 @@ Config:
 
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
+<img width="369" alt="Screenshot 2024-10-21 at 18 33 45" src="https://github.com/user-attachments/assets/6c7a626b-62f7-4b93-8b13-415282c909f2">
+
+<img width="956" alt="Screenshot 2024-10-21 at 18 29 54" src="https://github.com/user-attachments/assets/70ba0314-24d9-4e4b-a80e-56a566f4399e">
+
+<img width="973" alt="Screenshot 2024-10-21 at 18 28 51" src="https://github.com/user-attachments/assets/a95346d7-9a95-408a-9282-a9f938118b4f">
+
+<img width="836" alt="Screenshot 2024-10-21 at 18 35 51" src="https://github.com/user-attachments/assets/a9a570b7-91bd-4939-8b57-0f6917a5af4b">
 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
-<img width="708" alt="Screenshot 2024-10-19 at 16 33 28" src="https://github.com/user-attachments/assets/a6c69819-fd14-43c2-813b-3e86b7595780">
-<img width="719" alt="Screenshot 2024-10-19 at 16 34 15" src="https://github.com/user-attachments/assets/1075ce7b-19d2-418a-b191-8bd01491faa4">
 
 ## Hyperparameter Tuning
 *TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
+<img width="946" alt="Screenshot 2024-10-21 at 18 39 06" src="https://github.com/user-attachments/assets/a69a390a-61ba-456b-89e3-726682adf69b">
+<img width="1005" alt="Screenshot 2024-10-21 at 18 40 09" src="https://github.com/user-attachments/assets/f528728d-591b-446c-aa19-877db30e2e17">
+<img width="964" alt="Screenshot 2024-10-21 at 18 41 37" src="https://github.com/user-attachments/assets/be650309-a911-4950-bbd7-956c411f7055">
 
 
 ### Results

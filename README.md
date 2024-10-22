@@ -1,7 +1,7 @@
 
 # Capstone Project - Azure ML Engineer
 
-In this project, I will experiment with a classification task, using 'accuracy' as primary metric, with both auto ML and hyperparameter tuning. The best model from two experiments will be compared and I will deploy the one with higher accuracy. In this repo:
+In this project, I will experiment with a classification task on Kaggle's Heart Failure Prediction Dataset, using 'accuracy' as primary metric, with both AutoML and hyperparameter tuning. In AutoML, I define the settings and cofiguration and then submit the experiment to find the model that maximizes accuracy. In hyperdrive I write a simple training and scoring script with logistic regression, and submit to Hyperdrive experiment with a defined range of values to fit to the script's parameter space. The best model from two experiments will be compared and I will deploy the one with higher accuracy. In this repo:
 - `heart.csv` is the dataset
 - `automl.ipynb` and `hyperparameter_tuning.ipynb` are the two notebooks where I run the two experiments
 - `train.py` and `conda_dependencies.yml` are the training script and environment dependecies for hyperdrive config
@@ -11,7 +11,7 @@ In this project, I will experiment with a classification task, using 'accuracy' 
 ## Dataset
 
 ### Overview
-This is the Heart Failure Prediction Dataset taken from Kaggle [link here](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction). It consists of 11 features and 1 target (HeartDisease: 1,0)
+This is the Heart Failure Prediction Dataset taken from Kaggle [link here](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction). It consists of 11 features and 1 target (HeartDisease: 1,0). It's worth noting that the dataset is slightly unbalanced, with 508 1's (Heart disease) and 410 0's (Normal).
 
 ### Task
 The task is Classification, with the HeartDisease target: 1 is patient having heart disease and 0 is not having. As there are relatively few features, I will use all 11 of them. Description of the features as taken from Kaggle:
@@ -37,10 +37,9 @@ I first uploaded the dataset to github, then copy the raw URL. This URL is then 
 ## Automated ML
 
 Settings:
-
-- **Experiment Timeout**: Max of 30 minutes, so the process completes in a reasonable timeframe.
+- **Experiment Timeout**: Max of 40 minutes, so the process completes in a reasonable timeframe.
 - **Concurrent Iterations**: Up to 5 iterations run concurrently to speed up training.
-- **Primary Metric**: Accuracy, to match with the logistic regression hyperdrive config later.
+- **Primary Metric**: Accuracy, to match with the logistic regression's method in hyperdrive config later. Although it would have been better to choose a metric suitable for unbalanced dataset such as AUC-weighted
 - **Early Stopping**: Enabled to halt training if further iterations are unlikely to improve model performance.
 
 Config:
@@ -51,7 +50,7 @@ Config:
 - **Logging**: Debug logs are stored in "automl_errors.log"
 
 ### Results
-The best model from the automated ML run is Voting Ensemble, with accuracy 0.877.
+The best model from the automated ML run is Voting Ensemble, with accuracy 0.877. While this accuracy may seems low, the model's AUC-weighted is high. This is likely because the dataset is slightly unbalanced
 
 <img width="369" alt="Screenshot 2024-10-21 at 18 33 45" src="https://github.com/user-attachments/assets/6c7a626b-62f7-4b93-8b13-415282c909f2">
 
@@ -70,14 +69,13 @@ I used a simple model: logistic regression, tuning two parameters:
 
 
 ### Results
-Tuning with the above parameter ranges give the highest accuracy of 0.859. The parameter values to get this result is `C=0.843` and `max_iter=128`. I could have improved it with larger ranges, or try add another parameter for tuning as well.
+Tuning with the above parameter ranges give the highest accuracy of 0.859. The parameter values to get this result is `C=0.843` and `max_iter=128`. In the future, I think this could be improved if I try experimenting with larger parameter ranges and try adding other parameters for tuning as well, such as solver.
 <img width="1005" alt="Screenshot 2024-10-21 at 18 40 09" src="https://github.com/user-attachments/assets/f528728d-591b-446c-aa19-877db30e2e17">
 
 Screenshot of `RunDetails` widget
-<img width="946" alt="Screenshot 2024-10-21 at 18 39 06" src="https://github.com/user-attachments/assets/a69a390a-61ba-456b-89e3-726682adf69b">
 
 Screenshot of best model's run ID and parameters
-<img width="964" alt="Screenshot 2024-10-21 at 18 41 37" src="https://github.com/user-attachments/assets/be650309-a911-4950-bbd7-956c411f7055">
+<img width="946" alt="Screenshot 2024-10-21 at 18 39 06" src="https://github.com/user-attachments/assets/a69a390a-61ba-456b-89e3-726682adf69b">
 
 ## Model Deployment
 The deployed model is the model from the best run of automl, deployed with authentication insights and authentication enabled
@@ -100,6 +98,11 @@ For this, the expected response should be:
 Sample code to send request to endpoint:
 <img width="983" alt="image" src="https://github.com/user-attachments/assets/f8e1978c-ff15-4856-ab93-7bf5725de7ef">
 
-
+## Future Improvement Suggestions
+- As this is a slightly unbalanced dataset, I think it would be better to choose another primary metric such as AUC weighted.
+- **Hyperparameter Tuning**:
+  - Experiment with larger parameter ranges, add other parameters for tuning
+  - Choose another base model for hyperparameter tuning
+  - Write a custom scoring function for metrics like AUC weighted above
 ## Screen Recording
 [Youtube Screencast](https://www.youtube.com/watch?v=9Qop1wjSyBw)

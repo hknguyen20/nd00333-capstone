@@ -73,6 +73,7 @@ Tuning with the above parameter ranges give the highest accuracy of 0.859. The p
 <img width="1005" alt="Screenshot 2024-10-21 at 18 40 09" src="https://github.com/user-attachments/assets/f528728d-591b-446c-aa19-877db30e2e17">
 
 Screenshot of `RunDetails` widget
+<img width="910" alt="image" src="https://github.com/user-attachments/assets/760ed92e-5860-46f3-a8e6-25b3377c993f">
 
 Screenshot of best model's run ID and parameters
 <img width="946" alt="Screenshot 2024-10-21 at 18 39 06" src="https://github.com/user-attachments/assets/a69a390a-61ba-456b-89e3-726682adf69b">

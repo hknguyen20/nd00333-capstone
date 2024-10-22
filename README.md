@@ -100,7 +100,7 @@ Sample code to send request to endpoint:
 
 ## Future Improvement Suggestions
 - As this is a slightly unbalanced dataset, I think it would be better to choose another primary metric such as AUC weighted.
-- **Hyperparameter Tuning**:
+- For AutoML I think quite oke already, but for hyperparameter tuning, I think it can be improved with:
   - Experiment with larger parameter ranges, add other parameters for tuning
   - Choose another base model for hyperparameter tuning
   - Write a custom scoring function for metrics like AUC weighted above
